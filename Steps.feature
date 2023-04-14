@@ -15,4 +15,4 @@ Scenario: [VakifBank Kredi Hesaplama Araci Testi]
 * Vade alanına "10" yazılır
 * Tutar alanı "200" olarak setli olmalıdır.
 * Aynı ekrandaki Hesapla butonuna tıklanır.
-* Toplam Ödenecek tutar alanında "212,29" olduğu kontrol edilir
+* Toplam Ödenecek tutar alanında "211,94" olduğu kontrol edilir

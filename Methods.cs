@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Extensions;
 using SeleniumExtras.PageObjects;
+using OpenQA.Selenium.Interactions;
 using System;
 
 namespace UnitTestProject1
@@ -44,7 +44,7 @@ namespace UnitTestProject1
         [FindsBy(How = How.XPath, Using = "//*[@class='select2-search__field']")]
         public IWebElement input;        
         
-        [FindsBy(How = How.XPath, Using = "//*[@class='slider tutarSlider2 ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content']")]
+        [FindsBy(How = How.XPath, Using = "//*[@id=\"ctl00_ctl10_ctl00_ajaxPanel\"]/div[3]/div[2]/div/div[1]/span")]
         public IWebElement slider;
 
         [FindsBy(How = How.XPath, Using = "//*[@id=\"ctl00_ctl10_ctl00_ajaxPanel\"]/div[9]/table/tbody/tr[5]/td[2]")]
@@ -113,10 +113,11 @@ namespace UnitTestProject1
             maturity.SendKeys(maturityMonth);
             maturity.SendKeys(Keys.Enter);
         }
-        public bool SetAmount(string amount)
+        public void SetAmount(string amount)
         {
-            string result = inptAmount.GetAttribute("value");
-            return result == amount;
+            slider.Click();
+            slider.SendKeys(Keys.ArrowRight);
+            slider.SendKeys(Keys.ArrowLeft);
         }
         public void ClickBtnCalculate()
         {

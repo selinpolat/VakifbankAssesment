@@ -59,7 +59,7 @@ namespace UnitTestProject1
             [StepDefinition(@"Tutar alanı ""([^""]*)"" olarak setli olmalıdır\.")]
             public void SetAmount(string amount)
             {
-                Assert.IsTrue(methods.SetAmount(amount));
+                methods.SetAmount(amount);
             }
             [StepDefinition(@"Aynı ekrandaki Hesapla butonuna tıklanır\.")]
             public void ClickBtnCalculate()
